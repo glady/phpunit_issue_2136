@@ -13,6 +13,17 @@ env:
 - PHPUNIT_VERSION=5.3.*
 - PHPUNIT_VERSION=*
 
+matrix:
+  allowed_failures:
+    - php: 5.5
+      env: PHPUNIT_VERSION=5.0.*
+    - php: 5.5
+      env: PHPUNIT_VERSION=5.1.*
+    - php: 5.5
+      env: PHPUNIT_VERSION=5.2.*
+    - php: 5.5
+      env: PHPUNIT_VERSION=5.3.*
+
 sudo: false
 
 install:
