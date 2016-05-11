@@ -20,6 +20,7 @@ install:
  - travis_retry composer install --no-interaction --prefer-source
 
 script:
+ - vendor/bin/phpunit --version
  #- vendor/bin/phpunit --testsuite Issue2136ByTestSuite --debug # not executing BTest
  - vendor/bin/phpunit --testsuite Issue2136Test # failing when bug is not solved
 
