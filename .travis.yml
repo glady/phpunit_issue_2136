@@ -1,26 +1,25 @@
 language: php
 
 php:
-#- 7
-#- 5.6
+- 7
+- 5.6
 - 5.5
 
 env:
 - PHPUNIT_VERSION = 4.8.*
-#- PHPUNIT_VERSION = 5.0.*
-#- PHPUNIT_VERSION = 5.1.*
-#- PHPUNIT_VERSION = 5.2.*
-#- PHPUNIT_VERSION = 5.3.*
-#- PHPUNIT_VERSION = *
+- PHPUNIT_VERSION = 5.0.*
+- PHPUNIT_VERSION = 5.1.*
+- PHPUNIT_VERSION = 5.2.*
+- PHPUNIT_VERSION = 5.3.*
+- PHPUNIT_VERSION = *
 
 sudo: false
 
 install:
- - travis_retry composer require phpunit/phpunit:4.8.*
+ - travis_retry composer require phpunit/phpunit:$PHPUNIT_VERSION
  - travis_retry composer install --no-interaction --prefer-source
 
 script:
- - vendor/bin/phpunit --version
- #- vendor/bin/phpunit --testsuite Issue2136ByTestSuite --debug # not executing BTest
+ - vendor/bin/phpunit --testsuite Issue2136ByTestSuite --debug # not executing BTest
  - vendor/bin/phpunit --testsuite Issue2136Test # failing when bug is not solved
 
