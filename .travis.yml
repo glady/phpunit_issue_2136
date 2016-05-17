@@ -6,6 +6,7 @@ php:
 - 5.5
 
 env:
+- PHPUNIT_VERSION=4.7.*
 - PHPUNIT_VERSION=4.8.*
 - PHPUNIT_VERSION=5.0.*
 - PHPUNIT_VERSION=5.1.*
@@ -23,7 +24,9 @@ matrix:
       env: PHPUNIT_VERSION=5.2.*
     - php: 5.5
       env: PHPUNIT_VERSION=5.3.*
-
+    - php: 7
+      env: PHPUNIT_VERSION=4.7.*
+    
 sudo: false
 
 install:
