@@ -5,5 +5,6 @@
       "name": "Mike Gladysch",
       "email": "mail@mike-gladysch.de"
     }
-  ]
+  ],
+  "minimum-stability": "dev"
 }
