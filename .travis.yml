@@ -13,6 +13,7 @@ env:
 - PHPUNIT_VERSION=5.2.*
 - PHPUNIT_VERSION=5.3.*
 - PHPUNIT_VERSION=*
+- PHPUNIT_VERSION=fork
 
 matrix:
   allow_failures:
@@ -26,11 +27,11 @@ matrix:
       env: PHPUNIT_VERSION=5.3.*
     - php: 7
       env: PHPUNIT_VERSION=4.7.*
-    
+
 sudo: false
 
 install:
- - travis_retry composer require phpunit/phpunit:$PHPUNIT_VERSION
+ - if [[ "$PHPUNIT_VERSION" == "fork" ]]; then travis_retry composer require glady/phpunit:issue-2136; else travis_retry composer require phpunit/phpunit:$PHPUNIT_VERSION; fi
  - travis_retry composer install --no-interaction --prefer-source
 
 script:
