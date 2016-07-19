@@ -31,7 +31,7 @@ matrix:
 sudo: false
 
 install:
- - if [[ "$PHPUNIT_VERSION" == "fork" ]]; then travis_retry composer require glady/phpunit:issue-2136; else travis_retry composer require phpunit/phpunit:$PHPUNIT_VERSION; fi
+ - if [[ "$PHPUNIT_VERSION" == "fork" ]]; then composer config repositories.glady/phpunit vcs https://github.com/glady/phpunit && travis_retry composer require glady/phpunit:issue-2136; else travis_retry composer require phpunit/phpunit:$PHPUNIT_VERSION; fi
  - travis_retry composer install --no-interaction --prefer-source
 
 script:
