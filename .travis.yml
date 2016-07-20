@@ -25,6 +25,7 @@ matrix:
     - env: PHPUNIT_VERSION=5.2.*
     - env: PHPUNIT_VERSION=5.3.*
     - env: PHPUNIT_VERSION=5.4.*
+    - env: PHPUNIT_VERSION=*
     - php: 5.5
       env: PHPUNIT_VERSION=fork
 
