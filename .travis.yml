@@ -12,23 +12,21 @@ env:
 - PHPUNIT_VERSION=5.1.*
 - PHPUNIT_VERSION=5.2.*
 - PHPUNIT_VERSION=5.3.*
+- PHPUNIT_VERSION=5.4.*
 - PHPUNIT_VERSION=*
 - PHPUNIT_VERSION=fork
 
 matrix:
   allow_failures:
-    - php: 5.5
-      env: PHPUNIT_VERSION=5.0.*
-    - php: 5.5
-      env: PHPUNIT_VERSION=5.1.*
-    - php: 5.5
-      env: PHPUNIT_VERSION=5.2.*
-    - php: 5.5
-      env: PHPUNIT_VERSION=5.3.*
+    - env: PHPUNIT_VERSION=4.7.*
+    - env: PHPUNIT_VERSION=4.8.*
+    - env: PHPUNIT_VERSION=5.0.*
+    - env: PHPUNIT_VERSION=5.1.*
+    - env: PHPUNIT_VERSION=5.2.*
+    - env: PHPUNIT_VERSION=5.3.*
+    - env: PHPUNIT_VERSION=5.4.*
     - php: 5.5
       env: PHPUNIT_VERSION=fork
-    - php: 7
-      env: PHPUNIT_VERSION=4.7.*
 
 sudo: false
 
